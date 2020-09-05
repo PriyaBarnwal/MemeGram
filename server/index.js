@@ -3,10 +3,14 @@ const got = require('got')
 const cheerio = require("cheerio")
 
 const app = express()
+
+app.use(express.static(`${__dirname}/../client`))
+app.use('/modules', express.static(`${__dirname}/../node_modules`))
+
 let url = "https://www.reddit.com/r/dankmemes/new"
 
 app.all('*', (req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "http://localhost:8888");
+  res.header("Access-Control-Allow-Origin", "*")
   next()
 })
 
@@ -14,12 +18,12 @@ app.get('/getMemes',  async(req, res) => {
   try {
   const response = await got(url)
   const dom = cheerio.load(response.body)
-  console.log('yo')
+  
   let nodeList = []
   dom('.media-element').map((i, elem)=> {
     nodeList.push(elem.attribs.src)
   })
-  console.log(nodeList)
+  
   res.send({
     message: 'success',
     data: nodeList.reverse()

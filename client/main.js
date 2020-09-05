@@ -12,10 +12,13 @@ if(navigator.serviceWorker) {
 
 let dataContainer = document.getElementById('data'),
   alert = document.querySelector('.alert'),
-  spinner = document.querySelector('.spinner')
+  spinner = document.querySelector('.spinner'),
+  pageLoader = document.querySelector('.spinner-grow')
 
 let update= async() =>{
   spinner.classList.toggle('reloading')
+  pageLoader.classList.remove('d-none')
+  dataContainer.classList.add('d-none')
 
   fetch('http://localhost:5000/getMemes')
     .then(async res =>  {
@@ -42,6 +45,8 @@ let update= async() =>{
     .catch(console.error)
     .finally(()=> {
       spinner.classList.toggle('reloading')
+      dataContainer.classList.remove('d-none')
+      pageLoader.classList.add('d-none')
     })
 
     return false

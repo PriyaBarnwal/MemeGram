@@ -2,19 +2,15 @@
   "name": "memegram",
   "version": "1.0.0",
   "description": "Trending memes",
-  "main": "index.html",
+  "main": "server/",
   "author": "Priyanka Barnwal",
   "license": "MIT",
   "scripts": {
-    "server": "nodemon server.js"
+    "start": "node server/"
   },
   "dependencies": {
-    "@babel/core": "^7.11.6",
-    "@babel/polyfill": "^7.11.5",
     "cheerio": "^1.0.0-rc.3",
-    "concurrently": "^5.3.0",
     "express": "^4.17.1",
-    "got": "^11.6.0",
-    "nodemon": "^2.0.4"
+    "got": "^11.6.0"
   }
 }
