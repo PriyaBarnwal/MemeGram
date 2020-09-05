@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <title>Giphygram</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=0, user-scalable=0">
+  <link rel="stylesheet" href="vendor/bootstrap.min.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="black">
+
+  <meta name="apple-mobile-web-app-title" content="MemeGram">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="apple-touch-icon" sizes="57x57" href="images/icons/apple-touch-icon-57x57.png" />
+  <link rel="apple-touch-icon" sizes="72x72" href="images/icons/apple-touch-icon-72x72.png" />
+  <link rel="apple-touch-icon" sizes="76x76" href="images/icons/apple-touch-icon-76x76.png" />
+  <link rel="apple-touch-icon" sizes="114x114" href="images/icons/apple-touch-icon-114x114.png" />
+  <link rel="apple-touch-icon" sizes="120x120" href="images/icons/apple-touch-icon-120x120.png" />
+  <link rel="apple-touch-icon" sizes="144x144" href="images/icons/apple-touch-icon-144x144.png" />
+  <link rel="apple-touch-icon" sizes="152x152" href="images/icons/apple-touch-icon-152x152.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="images/icons/apple-touch-icon-180x180.png" />
+  <script defer src="vendor/jquery.min.js"></script>
+  <script defer type="module" src="main.js"></script>
+
+  <style>
+    .reloading {
+      animation-name: spin;
+      animation-duration: 2000ms;
+      animation-iteration-count: infinite; 
+      animation-timing-function: linear;
+    }
+    @keyframes spin {
+      from { transform:rotate(0deg); }
+      to {transform:rotate(360deg); }
+    }
+    .border-black {
+      padding: 10px;
+      border: 1px solid #008a8a;
+    }
+    header {
+      background: #008a8a;
+    }
+  </style>
+  </head>
+
+  <body>
+    <header class="navbar sticky-top navbar-expand navbar-dark">
+      <a><img src="images/logo.png" alt="Giphygram" width="60" class="img-fluid navbar-brand"></a>
+      <div class="ml-auto">
+        <img class="icon spinner" width="20" src="images/sync.png">
+      </div>
+    </header>
+    <main class="container p-1">
+      <div id="data" class="row no-gutters"></div>
+    </main>
+  </body>
+</html>
