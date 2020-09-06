@@ -4,6 +4,7 @@ const cheerio = require("cheerio")
 
 const app = express()
 
+const port = process.env.PORT || 5000
 app.use(express.static(`${__dirname}/../client`))
 app.use('/modules', express.static(`${__dirname}/../node_modules`))
 
